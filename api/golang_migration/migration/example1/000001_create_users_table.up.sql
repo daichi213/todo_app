@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS todo(
+    ID serial PRIMARY KEY,
+    Title VARCHAR (50) NOT NULL,
+    Content VARCHAR (250) NOT NULL,
+    Status BIT NOT NULL
+    -- email VARCHAR (300) UNIQUE NOT NULL
+);

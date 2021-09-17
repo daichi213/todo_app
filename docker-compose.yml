@@ -1,0 +1,70 @@
+version: '3'
+networks:
+  db_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.200.0/24
+          gateway: 192.168.200.1
+services:
+  db:
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    networks:
+      db_net:
+        ipv4_address: 192.168.200.2
+    volumes:
+      - ./db/mysql.conf:/etc/mysql/mysql.conf.d
+      - ./db/todo:/home/todo
+      - ./db/initdb:/docker-entrypoint-initdb.d
+      # - ./db/log:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: todo_dev
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3306:3306"
+  front:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    user: root
+    volumes:
+      - ./front:/usr/src/app
+    command: sh -c "cd todo_app && npm run dev"
+    ports:
+      - "3000:3000"
+    tty: true
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    command: sh -c "go run ."
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./api:/go/src/api/
+    tty: true
+    environment:
+      TEST_MODE: "true"
+      MYSQL_DATABASE: "todo_dev"
+      MYSQL_TEST_DATABASE: "todo_test"
+      MYSQL_USER: "root"
+      MYSQL_ROOT_PASSWORD: "password"
+      MYSQL_HOST: 192.168.200.1
+      MYSQL_PORT: 3306
+    depends_on:
+      - db
+  nginx:
+    build:
+      context: ./nginx/
+      dockerfile: Dockerfile
+    container_name: nginx
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./nginx/:/etc/nginx/conf.d/
+    depends_on:
+      - front
