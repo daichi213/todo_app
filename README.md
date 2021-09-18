@@ -1,6 +1,7 @@
 # 環境構築
 
 ## Build手順まとめ
+
 ```sh
 $ docker-compose run --rm front npx create-next-app --ts next_app 
 $ docker-compose build
@@ -109,7 +110,15 @@ module.exports = {};
   "start": "next start",
   "test": "jest --watchAll"
 }
-``
+```
+
+### Material UIの導入
+
+1. コンテナ内で以下コマンドを実行する
+
+```bash
+$ npm install @material-ui/core @material-ui/icons
+```
 
 
 ### ライブラリを追加する場合
