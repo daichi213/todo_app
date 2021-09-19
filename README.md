@@ -114,10 +114,18 @@ module.exports = {};
 
 ### Material UIの導入
 
+基本的に[こちらのサイト](https://maku.blog/p/s6djqw3/)を参考にした。
+
 1. コンテナ内で以下コマンドを実行する
 
 ```bash
 $ npm install @material-ui/core @material-ui/icons
+```
+
+2. NextjsでMaterialUIを使用する際は、SSRとの兼ね合いからスタイルの処理順序を制御する必要があるとのこと。そのため、以下の設定ファイルを準備する。
+
+```
+
 ```
 
 
