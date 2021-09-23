@@ -7,6 +7,13 @@ networks:
       config:
         - subnet: 192.168.200.0/24
           gateway: 192.168.200.1
+  api_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.210.0/24
+          gateway: 192.168.210.1
 services:
   db:
     build:
@@ -36,10 +43,15 @@ services:
     ports:
       - "3000:3000"
     tty: true
+    environment:
+      BASE_URL: "http://192.168.210.1"
   api:
     build:
       context: ./api
       dockerfile: Dockerfile
+    networks:
+      api_net:
+        ipv4_address: 192.168.210.2
     command: sh -c "go run ."
     ports:
       - "8080:8080"

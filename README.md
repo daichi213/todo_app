@@ -101,7 +101,13 @@ import '@testing-library/jest-dom/extend-expect'
 module.exports = {};
 ```
 
-4. package.jsonにtestコマンドを追加する
+4. 以下コマンドを実行する
+
+ ```bash
+$ npm install --save-dev jest jest-dom @types/jest ts-jest @testing-library/dom @testing-library/jest-dom @testing-library/react babel-jest identity-obj-proxy react-test-renderer
+ ```
+
+5. package.jsonにtestコマンドを追加する
 
 ```json
 "scripts": {

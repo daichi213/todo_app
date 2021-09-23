@@ -13,7 +13,7 @@ func ShowTodoIndex(ctx *gin.Context) {
 
 	ctx.JSON(http.StatusOK, gin.H{
 		"page_title": "Index page", 
-		"todo":todos,
+		"todos":todos,
 	},)
 }
 
