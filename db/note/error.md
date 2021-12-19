@@ -36,4 +36,41 @@ todoapp_api_1 exited with code
 
 ### DBの日本語対応
 
-上記のようなエラーの原因はDBのOSレベルから日本語対応していないことが原因のようだった。
+#### OSレベルの日本語対応
+
+上記のようなエラーの原因はDBのOSレベルから日本語対応していないことが原因のようだった。[こちらのページ](https://www.naokilog.com/2017/11/03/docker-%E3%81%AE%E6%97%A5%E6%9C%AC%E8%AA%9E%E8%A8%AD%E5%AE%9A/)に従ってDockerfileにてイメージをセットアップすることで、シェル上に日本語を入力できるようになった。
+
+```Dockerfile
+RUN apt-get update \
+    && apt-get install -y locales \
+    && locale-gen ja_JP.UTF-8 \
+    && localedef -f UTF-8 -i ja_JP ja_JP
+```
+
+#### DBレベルの日本語対応
+
+以下のクエリを実行することで、DBごとにCHARSETを設定することができる。
+
+```sql
+CREATE DATABASE IF NOT EXISTS todo_test;
+ALTER DATABASE todo_test CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+```
+
+### 原因
+
+今回テーブル作成はGinのsql-migrationを使用して行っていたが、テーブルを以下のCHARSETをlatin1に設定していたことが原因だった。mysql全体の設定やdatabase自体の設定をいじっても解決しなかったが、テーブルをピンポイントで設定してしまっていた・・・
+この部分を「latin1」から「utf8mb4」へ変更して問題なく解決した。
+
+```sql
+CREATE TABLE `todos` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `created_at` datetime(3) DEFAULT NULL,
+  `updated_at` datetime(3) DEFAULT NULL,
+  `deleted_at` datetime(3) DEFAULT NULL,
+  `title` longtext,
+  `content` longtext,
+  `status` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx_todos_deleted_at` (`deleted_at`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+```

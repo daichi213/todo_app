@@ -31,7 +31,7 @@
 [mysqld]
 pid-file	= /var/run/mysqld/mysqld.pid
 socket		= /var/run/mysqld/mysqld.sock
-character-set-server = utf8
+character-set-server = utf8mb4
 # skip-character-set-client-handshake
 # default-storage-engine=INNODB
 # General
@@ -52,4 +52,6 @@ long_query_time = 10
 # Disabling symbolic-links is recommended to prevent assorted security risks
 symbolic-links=0
 [mysqldump]
-# default-character-set = utf8
+default-character-set = utf8
+[client]
+default-character-set=utf8mb4

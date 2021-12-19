@@ -28,8 +28,8 @@ services:
       - ./db/initdb:/docker-entrypoint-initdb.d
       # - ./db/log:/var/lib/mysql
     environment:
-      LANG: ja_JP.UTF-8
-      LC_ALL: ja_JP.UTF-8
+      LANG: "ja_JP.UTF-8"
+      LC_ALL: "ja_JP.UTF-8"
       MYSQL_DATABASE: todo_dev
       MYSQL_ROOT_PASSWORD: password
     ports:

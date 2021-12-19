@@ -10,7 +10,7 @@ CREATE TABLE `todos` (
   `status` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `idx_todos_deleted_at` (`deleted_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 -- +migrate Down
 DROP TABLE IF EXISTS todos;
