@@ -134,6 +134,14 @@ $ npm install @material-ui/core @material-ui/icons
 
 ```
 
+### 本番環境で必要なnpmモジュール
+
+本番環境でも必要になるモジュールを以下コマンドでインストールする。node_modulesが存在するディレクトリでnpm installして導入する。
+
+```bash
+$ cd todo_app
+$ npm install axios
+```
 
 ### ライブラリを追加する場合
 

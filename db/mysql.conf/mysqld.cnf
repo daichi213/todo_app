@@ -26,9 +26,14 @@
 # For explanations see
 # http://dev.mysql.com/doc/mysql/en/server-system-variables.html
 
+[mysql]
+# default-character-set = utf8
 [mysqld]
 pid-file	= /var/run/mysqld/mysqld.pid
 socket		= /var/run/mysqld/mysqld.sock
+character-set-server = utf8
+# skip-character-set-client-handshake
+# default-storage-engine=INNODB
 # General
 datadir		= /var/lib/mysql
 log-output	= FILE
@@ -46,3 +51,5 @@ long_query_time = 10
 #bind-address	= 127.0.0.1
 # Disabling symbolic-links is recommended to prevent assorted security risks
 symbolic-links=0
+[mysqldump]
+# default-character-set = utf8

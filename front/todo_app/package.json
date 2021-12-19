@@ -9,10 +9,12 @@
     "@emotion/styled": "latest",
     "@mui/icons-material": "^5.0.0",
     "@mui/material": "next",
+    "axios": "^0.22.0",
     "clsx": "latest",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "styled-components": "^5.3.1"
   },
   "scripts": {
     "dev": "next",
