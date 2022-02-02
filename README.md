@@ -145,7 +145,11 @@ $ npm install axios
 
 ### ライブラリを追加する場合
 
-Dcoerfileに追加するライブラリを記載してbuildする
+- Dcoerfileに追加するライブラリを記載してbuildする
+
+#### 注意点
+
+
 
 ## api(gin)について
 
