@@ -1,0 +1,55 @@
+2022/03/05 04:40:02 [emerg] 1#1: cannot load certificate "/etc/certs/localhost.pem": PEM_read_bio_X509_AUX() failed (SSL: error:0909006C:PEM routines:get_name:no start line:Expecting: TRUSTED CERTIFICATE)
+2022/03/05 05:02:15 [emerg] 1#1: cannot load certificate "/etc/certs/localhost-crt.pem": BIO_new_file() failed (SSL: error:02001002:system library:fopen:No such file or directory:fopen('/etc/certs/localhost-crt.pem','r') error:2006D080:BIO routines:BIO_new_file:no such file)
+2022/03/05 05:03:05 [emerg] 1#1: cannot load certificate "/etc/certs/localhost-crt.pem": BIO_new_file() failed (SSL: error:02001002:system library:fopen:No such file or directory:fopen('/etc/certs/localhost-crt.pem','r') error:2006D080:BIO routines:BIO_new_file:no such file)
+2022/03/05 05:09:48 [emerg] 1#1: cannot load certificate "/etc/nginx/conf.d/conf/cert/localhost-crt.pem": BIO_new_file() failed (SSL: error:02001002:system library:fopen:No such file or directory:fopen('/etc/nginx/conf.d/conf/cert/localhost-crt.pem','r') error:2006D080:BIO routines:BIO_new_file:no such file)
+2022/03/05 05:10:56 [emerg] 1#1: cannot load certificate "/etc/nginx/conf.d/conf/cert/localhost-crt.pem": BIO_new_file() failed (SSL: error:02001002:system library:fopen:No such file or directory:fopen('/etc/nginx/conf.d/conf/cert/localhost-crt.pem','r') error:2006D080:BIO routines:BIO_new_file:no such file)
+2022/03/05 05:24:23 [emerg] 1#1: cannot load certificate "/etc/nginx/conf.d/conf/cert/localhost.crt": BIO_new_file() failed (SSL: error:02001002:system library:fopen:No such file or directory:fopen('/etc/nginx/conf.d/conf/cert/localhost.crt','r') error:2006D080:BIO routines:BIO_new_file:no such file)
+2022/03/05 05:28:54 [emerg] 1#1: cannot load certificate "/etc/nginx/conf.d/conf/cert/localhost.crt": BIO_new_file() failed (SSL: error:02001002:system library:fopen:No such file or directory:fopen('/etc/nginx/conf.d/conf/cert/localhost.crt','r') error:2006D080:BIO routines:BIO_new_file:no such file)
+2022/03/05 05:42:56 [emerg] 1#1: cannot load certificate "/etc/nginx/certs/localhost.crt": BIO_new_file() failed (SSL: error:02001002:system library:fopen:No such file or directory:fopen('/etc/nginx/certs/localhost.crt','r') error:2006D080:BIO routines:BIO_new_file:no such file)
+2022/03/05 05:46:35 [notice] 1#1: using the "epoll" event method
+2022/03/05 05:46:35 [notice] 1#1: nginx/1.21.6
+2022/03/05 05:46:35 [notice] 1#1: built by gcc 10.3.1 20211027 (Alpine 10.3.1_git20211027) 
+2022/03/05 05:46:35 [notice] 1#1: OS: Linux 5.10.25-linuxkit
+2022/03/05 05:46:35 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/03/05 05:46:35 [notice] 1#1: start worker processes
+2022/03/05 05:46:35 [notice] 1#1: start worker process 32
+2022/03/05 05:46:35 [notice] 1#1: start worker process 33
+2022/03/05 05:46:35 [notice] 1#1: start worker process 34
+2022/03/05 05:46:35 [notice] 1#1: start worker process 35
+2022/03/05 05:46:35 [notice] 1#1: start worker process 36
+2022/03/05 05:46:35 [notice] 1#1: start worker process 37
+2022/03/05 05:46:35 [notice] 1#1: start worker process 38
+2022/03/05 05:46:35 [notice] 1#1: start worker process 39
+2022/03/05 05:47:21 [error] 32#32: *1 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.27.0.1, server: , request: "GET / HTTP/1.1", host: "localhost"
+2022/03/05 05:47:21 [error] 33#33: *2 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.27.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2022/03/05 05:48:06 [error] 34#34: *9 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.27.0.1, server: , request: "GET / HTTP/1.1", host: "localhost"
+2022/03/05 05:48:06 [error] 34#34: *10 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.27.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2022/03/05 05:53:27 [emerg] 1#1: unknown log format "info" in /etc/nginx/conf.d/default.conf:1
+2022/03/05 05:54:05 [notice] 1#1: using the "epoll" event method
+2022/03/05 05:54:05 [notice] 1#1: nginx/1.21.6
+2022/03/05 05:54:05 [notice] 1#1: built by gcc 10.3.1 20211027 (Alpine 10.3.1_git20211027) 
+2022/03/05 05:54:05 [notice] 1#1: OS: Linux 5.10.25-linuxkit
+2022/03/05 05:54:05 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/03/05 05:54:05 [notice] 1#1: start worker processes
+2022/03/05 05:54:05 [notice] 1#1: start worker process 32
+2022/03/05 05:54:05 [notice] 1#1: start worker process 33
+2022/03/05 05:54:05 [notice] 1#1: start worker process 34
+2022/03/05 05:54:05 [notice] 1#1: start worker process 35
+2022/03/05 05:54:05 [notice] 1#1: start worker process 36
+2022/03/05 05:54:05 [notice] 1#1: start worker process 37
+2022/03/05 05:54:05 [notice] 1#1: start worker process 38
+2022/03/05 05:54:05 [notice] 1#1: start worker process 39
+2022/03/05 05:56:59 [notice] 1#1: using the "epoll" event method
+2022/03/05 05:56:59 [notice] 1#1: nginx/1.21.6
+2022/03/05 05:56:59 [notice] 1#1: built by gcc 10.3.1 20211027 (Alpine 10.3.1_git20211027) 
+2022/03/05 05:56:59 [notice] 1#1: OS: Linux 5.10.25-linuxkit
+2022/03/05 05:56:59 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/03/05 05:56:59 [notice] 1#1: start worker processes
+2022/03/05 05:56:59 [notice] 1#1: start worker process 33
+2022/03/05 05:56:59 [notice] 1#1: start worker process 34
+2022/03/05 05:56:59 [notice] 1#1: start worker process 35
+2022/03/05 05:56:59 [notice] 1#1: start worker process 36
+2022/03/05 05:56:59 [notice] 1#1: start worker process 37
+2022/03/05 05:56:59 [notice] 1#1: start worker process 38
+2022/03/05 05:56:59 [notice] 1#1: start worker process 39
+2022/03/05 05:56:59 [notice] 1#1: start worker process 40
