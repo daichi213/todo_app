@@ -4,7 +4,7 @@ COPY . /go/src/api/
 WORKDIR /go/src/api/
 # go.modとgo.sumファイルに必要なツールを記述してインポートする
 RUN apk update \
-  && apk add --no-cache git alpine-sdk gnupg \
+  && apk add --no-cache git alpine-sdk gnupg vim mysql-client \
   && go get github.com/gin-gonic/gin \
   && go get gorm.io/gorm \
   && go get github.com/go-sql-driver/mysql \

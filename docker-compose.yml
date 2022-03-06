@@ -14,6 +14,8 @@ networks:
       config:
         - subnet: 192.168.210.0/24
           gateway: 192.168.210.1
+volumes:
+  db-volume:
 services:
   db:
     build:
@@ -27,6 +29,7 @@ services:
       - ./db/todo:/home/todo
       - ./db/initdb:/docker-entrypoint-initdb.d
       # - ./db/log:/var/lib/mysql
+      - db-volume:/var/lib/mysql
     environment:
       LANG: "ja_JP.UTF-8"
       LC_ALL: "ja_JP.UTF-8"
